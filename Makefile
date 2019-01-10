@@ -22,5 +22,5 @@ $(PROG):	$(OBJECTS)
 	$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
-	rm -f $(PROG) *.o *~ shaders/*~
+	rm -f $(PROG) *.o *~
 

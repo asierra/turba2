@@ -17,7 +17,7 @@ bool pause = true;
 void draw_obstacles(CrowdSim *sim) {
   glColor3f(0.5, 0.5, 0.5);
   glBegin(GL_QUADS);
-  for (int i=0; i < sim->obstacle_vertices.size(); i += 4) {
+  for (size_t i=0; i < sim->obstacle_vertices.size(); i += 4) {
     glVertex2f(sim->obstacle_vertices[i  ].x*scale, sim->obstacle_vertices[i  ].y*scale);
     glVertex2f(sim->obstacle_vertices[i+1].x*scale, sim->obstacle_vertices[i+1].y*scale);
     glVertex2f(sim->obstacle_vertices[i+2].x*scale, sim->obstacle_vertices[i+2].y*scale);
@@ -56,7 +56,7 @@ int main(void)
     // Draw agents
     glBegin (GL_POINTS);
 
-    int n = sim->getNumAgents();
+    size_t n = sim->getNumAgents();
     for (size_t i = 0; i < n; ++i) {
       glm::vec2 pos = sim->getAgentPosition(i);
       float x = pos.x*scale;
